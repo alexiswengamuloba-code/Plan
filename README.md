@@ -161,33 +161,70 @@
             border: 3px solid var(--accent-cyan);
         }
 
-        /* --- MEDIA QUERIES (POUR ORDINATEUR) --- */
-        @media (min-width: 768px) {
-            .main-title { font-size: 1.5rem; margin-bottom: 0; }
-            .submenu-container { flex-direction: row; } /* Ligne sur PC */
-            .flex-container { flex-direction: row; text-align: left; } /* Image à gauche sur PC */
-            .btn-sub { flex: 1; }
-        }
+/* --- STYLE PAR DÉFAUT (MOBILE D'ABORD) --- */
+.main-title { 
+    font-size: 1.2rem; /* Taille adaptée au téléphone */
+    margin-bottom: 10px; 
+    text-align: center; /* Centré sur mobile pour un meilleur look */
+}
 
-        /* Formulaire */
-        input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            background: #111;
-            border: 1px solid #444;
-            color: #fff;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
+.submenu-container { 
+    display: flex;
+    flex-direction: column; /* Empilé verticalement sur mobile */
+    gap: 10px;
+}
 
-        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+.flex-container { 
+    display: flex;
+    flex-direction: column; /* Contenu l'un sous l'autre sur mobile */
+    text-align: center; 
+}
 
-        .delete-btn {
-            position: absolute; top: 10px; right: 10px;
-            background: #ff4444; color: white; border: none;
-            border-radius: 50%; width: 25px; height: 25px; cursor: pointer;
-        }
+/* --- MEDIA QUERIES (POUR ORDINATEUR - Écrans > 768px) --- */
+@media (min-width: 768px) {
+    .main-title { 
+        font-size: 1.8rem; /* Plus grand sur PC */
+        margin-bottom: 0; 
+        text-align: left; 
+    }
+    .submenu-container { 
+        flex-direction: row; /* Aligné horizontalement sur PC */
+    } 
+    .flex-container { 
+        flex-direction: row; 
+        text-align: left; 
+    }
+    .btn-sub { 
+        flex: 1; 
+    }
+}
+
+/* --- FORMULAIRE ET ÉLÉMENTS FIXES --- */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #111;
+    border: 1px solid #444;
+    color: #00ffcc; /* Une touche de couleur néon pour le style tech */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px; /* Évite le zoom auto sur iPhone quand on clique dessus */
+}
+
+.delete-btn {
+    position: absolute; 
+    top: 10px; 
+    right: 10px;
+    background: #ff4444; 
+    color: white; 
+    border: none;
+    border-radius: 50%; 
+    width: 30px; /* Un peu plus grand pour être cliquable au doigt */
+    height: 30px; 
+    cursor: pointer;
+}
+
     </style>
 </head>
 <body>
